@@ -24,14 +24,14 @@ export default {
     setColumnRenders(column) {
       let defaultRenderCell = column.renderCell
 
-      column.renderCell = (h, data, row, cell, index) => {
+      column.renderCell = (h, data) => {
         let children = null
 
         //  默认作用域
         if (this.$scopedSlots.default) {
           children = this.$scopedSlots.default(data)
         }else {
-          children = row[cell]
+          children = data.row[data.prop]
         }
 
         const props = {

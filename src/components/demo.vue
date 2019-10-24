@@ -1,18 +1,15 @@
 <template>
   <div class="content">
     <hi-table :list="list" :height="500">
-      <hi-table-td label="课次" prop="seq">
-        <template>
-          <pre>wwww</pre>
-        </template>
-      </hi-table-td>
-      <hi-table-td label="课程标题" prop="courseTitle">
-        <template>
-          <pre>wwwwww</pre>
-        </template>
-      </hi-table-td>
+      <hi-table-td label="课次" prop="seq"></hi-table-td>
+      <hi-table-td label="课程标题" prop="courseTitle"></hi-table-td>
       <hi-table-td label="时间" prop="courseTime"></hi-table-td>
-      <hi-table-td label="操作" prop="seq"></hi-table-td>
+      <hi-table-td label="操作">
+        <template slot-scope="scope">
+          <!-- <pre>{{scope.row.status}}</pre> -->
+          <button class="hi-btn">hai</button>
+        </template>
+      </hi-table-td>
     </hi-table>
   </div>
 </template>

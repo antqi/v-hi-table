@@ -28,16 +28,21 @@ export default {
     const columns = this.parent.columns
     const $createElement = this.$createElement
     const $context = this.$vnode.context
-    console.log($context)
+
     return (
       <table class='hi-table'>
         <tbody>
           {list.map((row) => {
              return <tr>
                       {Object.keys(row).map((cell, index) => {
+                         let data = {
+                           row:row,
+                           ...columns[index],
+                            index:index
+                         }
                          return <td>
                                   <div class='cell'>
-                                    {columns[index].renderCell($createElement, $context, row, cell, index)}
+                                    {columns[index].renderCell($createElement, data)}
                                   </div>
                                 </td>
                        })}
